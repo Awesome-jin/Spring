@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 보통 id는 클래스 이름을 소문자로 많이 씀 -->
+	<!-- DI패키지의 DTO라는 클래스의 객체를 생성해주는 bean
+	DTO dto = new DTO()와 유사.
+	직접 작성한 코드는 호출한 횟수만큼 객체를 생성 가능하지만, 여기선 1번만 생성하는게 차이점
+	class 경로나 매개변수 또는 프로퍼티 이름을 잘못 입력하면 에러표시가 뜨니까 확인하면서 작업할것
+	 -->
+
+	<bean id = "dto" class = "DI.DTO">
+		<constructor-arg value="생성자를 이용한 주입 방법"></constructor-arg>
+	</bean>
+	
+	<bean id = "dto1" class = "DI.DTO">
+		<property name= "name" value="프로퍼티를 이용한 주입"/>
+	</bean>
+	
+	<bean id = "string" class="java.lang.String">
+		<constructor-arg value = "다른 bean을 이용한 주입"></constructor-arg>	
+	</bean>
+	
+	<bean id = "dto2" class="DI.DTO">
+		<!-- name property에 바로 위에서 생성한 string bean을 대입하는 구조 -->
+		<property name="name">
+			<ref bean = "string"/>
+		</property>
+	</bean>
+	
+</beans>
