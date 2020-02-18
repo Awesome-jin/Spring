@@ -52,12 +52,53 @@
 
 <!-- 중앙저장소 이외에서 다우놀드 받아야 할 때 설정해주기 : 다운로드 받는 서버를 설정 -->
 <repositories>
-
+	<!-- 오라클은 중앙저장소에서 드라이버를 다운로드를 제공하지 않기 때문에 repository를 설정해야 함 > ppt25 -->
+	<repository>
+		<id>oracle</id>
+		<name>ORACLE JDBC Repository</name>
+		<url>http://maven.jahia.org/maven2</url> 
+	</repository>
 </repositories>
 
  
 <!-- 의존성 라이브러리 설정 : 실제 사용할 라이브러리 -->
 <dependencies>
+
+<!-- mybatis를 사용할 수 있게 해주는 의존성 설정 -->
+<dependency>
+	<groupId>org.mybatis</groupId>
+	<artifactId>mybatis</artifactId>
+	<version>3.4.6</version>
+</dependency>
+<!-- mybatis를 Spring과 같이 쓰려면 이 의존성까지 같이 설정해주기 -->
+<dependency>
+	<groupId>org.mybatis</groupId>
+	<artifactId>mybatis-spring</artifactId>
+	<version>1.3.2</version>
+</dependency>
+
+
+<!-- 오라클의 의존성 추가! -->
+<dependency>
+	<groupId>com.oracle</groupId>
+	<artifactId>ojdbc7</artifactId>
+	<version>12.1.0.2</version>
+</dependency>
+
+<!-- 스프링에서 DB를 사용할 때, 사용 하고자 하는 라이브러리를 설정해주는 의존성-->
+<dependency>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-jdbc</artifactId>
+	<version>${spring-framework.version}</version>
+</dependency>
+
+
+<!-- lombok의 의존성 추가해주기 > 이거하면 DTO 만들 때, 수동으로 gettersetter 이런거 다 안해줘도 돼! -->
+<dependency>
+	<groupId>org.projectlombok</groupId>
+	<artifactId>lombok</artifactId>
+	<version>1.18.8</version>
+</dependency>
 
 <!-- Spring and Transactions -->
 
