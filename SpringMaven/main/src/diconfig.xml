@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!-- 보통 id는 클래스 이름을 소문자로 많이 씀 -->
@@ -27,6 +28,10 @@
 		<property name="name">
 			<ref bean = "string"/>
 		</property>
+	</bean>
+	
+	<!-- p name -->
+	<bean id="dto3" class="DI.DTO" p:name-ref="string">
 	</bean>
 	
 </beans>

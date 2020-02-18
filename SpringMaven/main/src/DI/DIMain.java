@@ -16,8 +16,12 @@ public class DIMain {
 		
 		DTO dto1 = context.getBean("dto1", DTO.class);
 		System.out.println(dto1.getName());
-		context.close();
 		
-		// 중간에 없는데도 경로 문제 생기면? >>>>> 업데이트 해주기
+		//cf. 중간에 없는데도 경로 문제 생기면? 우클릭 >>>Maven>>> 업데이트 해주기
+		
+		DTO dto2 = context.getBean("dto2",DTO.class);
+		System.out.println(dto2.getName());
+		context.close();
+	
 	}
 }
