@@ -21,12 +21,14 @@
  
 
 <!-- Spring -->
+<!-- RestController가 4버전 이상에서 추가 되었기 때문에 4 이상으로 바꾸자★ 수정필요 -->
 
 <spring-framework.version>5.0.7.RELEASE</spring-framework.version>
 
  
 
 <!-- Hibernate / JPA -->
+<!-- Hibernate : python이나 장고에서 데이터베이스 이용 원리와 비슷함 -->
 
 <hibernate.version>4.2.1.Final</hibernate.version>
 
@@ -48,8 +50,13 @@
 
 </properties>
 
+<!-- 중앙저장소 이외에서 다우놀드 받아야 할 때 설정해주기 : 다운로드 받는 서버를 설정 -->
+<repositories>
+
+</repositories>
+
  
-<!-- 의존성 라이브러리 설정 -->
+<!-- 의존성 라이브러리 설정 : 실제 사용할 라이브러리 -->
 <dependencies>
 
 <!-- Spring and Transactions -->

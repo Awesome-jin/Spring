@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- Spring 동작흐름 파악하기
+	
+	1~2 일반적인 인스턴스 생성
+	3. property로 DI 하는 과정
+	4. Annotation으로 자동 생성으로 코드 생략
+	5. bean 자동 생성으로 코드 생략
+	
+
+
+	//1.id는 변수명이라 아무거나 넣어도 됨.
+	2.class에 디렉토리.클래스이름을 하면 인스턴스를 생성해주는 과정임
+	2-1<bean id="dao" class="di.Dao"></bean>
+	2-2<bean id = "service" class = "di.Service"></bean>
+	2-3<bean id = "controller" class = "di.Controller"></bean>
+	
+	
+	//  5. 자동 bean 생성으로 다 생략
+	<bean id="dao" class="di.Dao"></bean>
+	
+	<bean id="service" class = "di.Service"> 3. id와 클래스 방법까진 동일. property에 넣어줄 클래스와 ref도 동일하게 넣어주기
+		 // 4.자동 주입이 되었기 때문에 property가 필요가없다
+		3.1<property name="dao">
+		3.2<ref bean ="dao"></ref>
+		</property>
+	</bean>
+	
+	<bean id = "controller" class = "di.Controller">
+			//4.마찬가지로 자동주입을 했으니 property가 불필요하다.
+			3.1<property name="service">
+			3.2<ref bean ="service"></ref>
+			</property> 
+	</bean>
+	-->
+	
+	<!-- 6. di 패키지에 @Component붙은 클래스의 bean은 다 자동 생성해주는 것-->
+	<context:component-scan base-package="di"/>
+	
+	<!-- 5.Annotation을 쓰려면 추가해야하는 명령어 
+	에러가 나면 name space를 추가해야 한다. source옆에 체크하기-->
+	<context:annotation-config/>
+	
+</beans>
