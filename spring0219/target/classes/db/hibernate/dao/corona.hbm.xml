@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!-- 패키지이름엔 내가 작성한 패키지 이름 넣기 -->
+<hibernate-mapping package="db.hibernate.domain">
+	<class name = "Corona" table = "CORONA"> 
+		<id name ="num" column = "num"/>
+		<!-- column은 db에 있는 이름. name은 class에서 선언한 것 -->
+		<property name="nation" column = "nation"/> 
+		<property name="infnum" column = "infnum"/>
+		<property name="death" column = "death"/>
+		<property name="cured" column = "cured"/>
+	</class>
+</hibernate-mapping>

@@ -1,4 +1,4 @@
-package DI;
+package yesterday;
 
 public class DTO {
 	

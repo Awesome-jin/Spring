@@ -1,4 +1,4 @@
-package DI;
+package yesterday;
 
 import org.springframework.context.support.GenericXmlApplicationContext;
 

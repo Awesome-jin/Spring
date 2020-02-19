@@ -1,7 +1,10 @@
 package di;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+//★Bean을 자동으로 생성해주는 annotation인 component 달아주기
+@Component
 public class Controller {
 	
 	//3. Controller를 추가하고 작성하기

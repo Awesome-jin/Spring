@@ -7,7 +7,9 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
-		<config>main/src/ApplicationContext.xml</config>
+		<config>src/main/java/ApplicationContext.xml</config>
+		<config>src/main/java/app.xml</config>
+		<config>src/main/java/mybatis.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
