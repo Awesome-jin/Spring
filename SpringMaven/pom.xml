@@ -44,7 +44,7 @@
 
 <!-- Test: 테스트 라이브러리 버전이므로 최근은 4.12 이상 사용해야함! ★수정 필요 -->
 
-<junit.version>4.12</junit.version>
+<junit.version>4.13.1</junit.version>
 
  
 
